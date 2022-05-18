@@ -18,7 +18,7 @@
             <tbody>
             <tr v-for="u in this.users" v-bind:key="u.id">
               <td>
-                <router-link :to="`/admin/users/${u.id}`">{{u.last_name}}, {{u.first_name}}</router-link>
+                <router-link :to="`/admin/users/${u.id}`">{{u.first_name}} {{u.last_name}}</router-link>
               </td>
               <td>{{u.email}}</td>
 
