@@ -54,8 +54,6 @@ export default {
   },
   methods: {
     submitHandler() {
-      console.log("submitHandler called - success!");
-
       const payload = {
         email: this.email,
         password: this.password,
@@ -72,7 +70,6 @@ export default {
                 // position: 'bottom',
               })
             } else {
-              console.log("Token:", response.data.token.token);
               store.token = response.data.token.token;
 
               store.user = {
