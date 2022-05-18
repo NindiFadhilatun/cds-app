@@ -34,7 +34,7 @@
 <script>
 import FormTag from './forms/FormTag.vue'
 import TextInput from './forms/TextInput.vue'
-import { store } from './store.js'
+import {store} from './store.js'
 import router from './../router/index.js'
 import notie from 'notie'
 
@@ -65,7 +65,7 @@ export default {
         body: JSON.stringify(payload),
       }
 
-      fetch("http://localhost:8081/users/login", requestOptions)
+      fetch(process.env.VUE_APP_API_URL + "/users/login", requestOptions)
           .then((response) => response.json())
           .then((response) => {
             if (response.error) {
