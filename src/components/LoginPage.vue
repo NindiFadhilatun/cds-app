@@ -37,6 +37,7 @@ import TextInput from './forms/TextInput.vue'
 import {store} from './store.js'
 import router from './../router/index.js'
 import notie from 'notie'
+import security from "@/components/security";
 
 export default {
   name: 'login-page',
@@ -60,16 +61,10 @@ export default {
         password: this.password,
       }
 
-      const requestOptions = {
-        method: "POST",
-        body: JSON.stringify(payload),
-      }
-
-      fetch(process.env.VUE_APP_API_URL + "/users/login", requestOptions)
+      fetch(process.env.VUE_APP_API_URL + "/users/login", security.requestOptions(payload))
           .then((response) => response.json())
           .then((response) => {
             if (response.error) {
-              console.log("Error:", response.message);
               notie.alert({
                 type: 'error',
                 text: response.message,
