@@ -1,15 +1,16 @@
 <template>
-  <HeaderPage />
+  <HeaderPage/>
   <div>
-    <router-view/>
+    <router-view :key="componentKey" @success="success" @error="error" @warning="warning" @forceUpdate="forceUpdate" />
   </div>
-  <FooterPage />
+  <FooterPage/>
 </template>
 
 <script>
 import HeaderPage from "./components/HeaderPage.vue"
 import FooterPage from "./components/FooterPage.vue"
-import { store } from "./components/store.js"
+import {store} from "./components/store.js"
+import notie from 'notie'
 
 const getCookie = (name) => {
   return document.cookie.split("; ").reduce((r, v) => {
@@ -26,7 +27,8 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+      componentKey: 0,
     }
   },
   beforeMount() {
@@ -44,6 +46,29 @@ export default {
         last_name: cookieData.user.last_name,
         email: cookieData.user.email,
       }
+    }
+  },
+  methods: {
+    success(msg){
+      notie.alert({
+        type: 'success',
+        text: msg,
+      })
+    },
+    error(msg) {
+      notie.alert({
+        type: 'error',
+        text: msg,
+      })
+    },
+    warning(msg) {
+      notie.alert({
+        type: 'warning',
+        text: msg,
+      })
+    },
+    forceUpdate() {
+      this.componentKey += 1;
     }
   }
 }
