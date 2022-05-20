@@ -54,6 +54,7 @@ import security from "@/components/security";
 import {store} from "@/components/store";
 
 export default {
+  name: "UsersList",
   data() {
     return {
       users: [],

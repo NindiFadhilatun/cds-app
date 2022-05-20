@@ -12,6 +12,7 @@
 import security from "@/components/security";
 
 export default {
+  name: "BookEdit",
   beforeMount() {
     security.requireToken();
   }

@@ -12,22 +12,22 @@ import security from "@/components/security";
 const routes = [
     {
         path: '/',
-        name: 'Home',
+        name: 'HomePage',
         component: BodyPage,
     },
     {
         path: '/login',
-        name: 'Login',
+        name: 'LoginPage',
         component: LoginPage,
     },
     {
         path: '/books',
-        name: 'Books',
+        name: 'BooksList',
         component: BooksList,
     },
     {
         path: '/books/:bookName',
-        name: 'Book',
+        name: 'BookPage',
         component: BookPage,
     },
     {
@@ -42,12 +42,12 @@ const routes = [
     },
     {
         path: '/admin/users',
-        name: 'Users',
+        name: 'UsersList',
         component: UsersList,
     },
     {
         path: '/admin/users/:userId',
-        name: 'User',
+        name: 'UserPage',
         component: UserEdit,
     },
 ]

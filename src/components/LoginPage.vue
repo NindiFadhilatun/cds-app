@@ -40,7 +40,7 @@ import notie from 'notie'
 import security from "@/components/security";
 
 export default {
-  name: 'login-page',
+  name: 'LoginPage',
   components: {
     FormTag,
     TextInput,
