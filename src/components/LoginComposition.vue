@@ -4,7 +4,7 @@
             <div class="col">
                 <h1 class="mt-5">Login</h1>
                 <hr>
-                <form-tag @myevent="submitHandler" name="myform" event="myevent">
+                <form-tag @my-event="submitHandler" name="my-form" event="my-event">
 
                     <text-input
                         v-model="mail"
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {ref, onMounted} from 'vue'
+import {ref} from 'vue'
 import FormTag from './forms/FormTag.vue'
 import TextInput from './forms/TextInput.vue'
 import { store } from './store.js'
@@ -51,10 +51,6 @@ export default {
     setup(props, ctx) {
         let mail = ref("");
         let password = ref("");
-
-        onMounted(() => {
-            console.log("Using new component");
-        })
 
         function submitHandler() {
             const payload = {

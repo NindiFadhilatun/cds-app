@@ -69,7 +69,6 @@ export default {
 
         // use onMounted lifecycle hook to get books
         onMounted(() => {
-            console.log("using books with composition api");
             fetch(process.env.VUE_APP_API_URL + "/books")
             .then((response) => response.json())
             .then((response) => {
