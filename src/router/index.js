@@ -1,8 +1,8 @@
 import {createRouter,createWebHistory} from 'vue-router'
 import BodyPage from './../components/BodyPage.vue'
-import LoginPage from './../components/LoginPage.vue'
-import BooksList from './../components/BooksList.vue'
-import BookPage from './../components/BookPage.vue'
+import LoginComposition from './../components/LoginComposition.vue'
+import BooksComposition from './../components/BooksComposition.vue'
+import BookComposition from './../components/BookComposition.vue'
 import BooksAdmin from './../components/BooksAdmin.vue'
 import BookEdit from './../components/BookEdit.vue'
 import UsersList from './../components/UsersList.vue'
@@ -17,18 +17,18 @@ const routes = [
     },
     {
         path: '/login',
-        name: 'LoginPage',
-        component: LoginPage,
+        name: 'LoginComposition',
+        component: LoginComposition,
     },
     {
         path: '/books',
-        name: 'BooksList',
-        component: BooksList,
+        name: 'BooksComposition',
+        component: BooksComposition,
     },
     {
         path: '/books/:bookName',
-        name: 'BookPage',
-        component: BookPage,
+        name: 'BookComposition',
+        component: BookComposition,
     },
     {
         path: '/admin/books',
